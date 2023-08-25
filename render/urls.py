@@ -1,7 +1,10 @@
 from django.urls import path
 
-from . import views
+from render.views import MarkersMapView
+
+app_name = "render"
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', MarkersMapView.as_view()),
 ]
+
