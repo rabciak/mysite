@@ -10,10 +10,16 @@
     <title>Nuclear map</title>
 
     <link rel="stylesheet" type="text/css" href="{% static 'map.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}" />
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet/dist/leaflet.css" crossorigin=""/>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js" crossorigin=""></script>
 </head>
 <body>
+    <div class="topnav">
+        <a class="active" href="#home">Source code</a>
+        <a href="#news">About</a>
+    </div>
+    {{world_border|json_script:"world-border-data" }}
     {{markers|json_script:"markers-data"}}
     <div id="map"></div>
     <script src="{% static 'map.js' %}" defer></script>
